@@ -102,6 +102,6 @@ while True:
     
 if extracted_data:
     df = pd.DataFrame(extracted_data)
-    save_data(df, 'extracted_data_all.csv')
+    save_data(df, 'politifact_raw.csv')
 
 
