@@ -1,0 +1,51 @@
+2024-01-27 20:59:23,310 - ERROR - page_parser.py[:377] - 'NoneType' object has no attribute 'xpath'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/page_parser.py", line 352, in extract_picture_urls
+    self.cookie, weibo_id).extract_preview_picture_list()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/mblog_picAll_parser.py", line 12, in extract_preview_picture_list
+    return self.selector.xpath('//img/@src')
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'xpath'
+2024-01-27 20:59:24,686 - ERROR - spider.py[:222] - 'NoneType' object has no attribute 'xpath'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/spider.py", line 179, in get_weibo_info
+    weibos, self.weibo_id_list, to_continue = PageParser(
+                                              ^^^^^^^^^^^
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/page_parser.py", line 47, in __init__
+    info = self.selector.xpath("//div[@class='c']")
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'xpath'
+2024-01-27 21:01:21,656 - ERROR - index_parser.py[:44] - 'NoneType' object has no attribute 'xpath'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/index_parser.py", line 33, in get_user
+    user_id = self._get_user_id()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/index_parser.py", line 20, in _get_user_id
+    url_list = self.selector.xpath("//div[@class='u']//a")
+               ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'xpath'
+2024-01-27 21:01:21,660 - ERROR - spider.py[:243] - 'NoneType' object has no attribute 'nickname'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/spider.py", line 227, in _get_filepath
+    dir_name = self.user.nickname
+               ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'nickname'
+2024-01-27 21:01:21,661 - ERROR - csv_writer.py[:30] - expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/writer/csv_writer.py", line 25, in __init__
+    with open(self.file_path, 'a', encoding='utf-8-sig',
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2024-01-27 21:01:22,741 - ERROR - index_parser.py[:56] - 'NoneType' object has no attribute 'xpath'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/parser/index_parser.py", line 49, in get_page_num
+    if self.selector.xpath("//input[@name='mp']") == []:
+       ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'xpath'
+2024-01-27 21:01:22,741 - ERROR - spider.py[:222] - unsupported operand type(s) for +: 'NoneType' and 'int'
+Traceback (most recent call last):
+  File "/Users/andyzhao/Downloads/weiboSpider-master/weibo_spider/spider.py", line 178, in get_weibo_info
+    for page in tqdm(range(1, page_num + 1), desc='Progress'):
+                              ~~~~~~~~~^~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
